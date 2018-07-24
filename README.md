@@ -46,8 +46,13 @@ The system is based on 3 nodes in 3 packages :
   ![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/Screenshot%20from%202018-07-24%2022-58-37.png)
       
       
- The algorithm process color (filtering white and red) and binarize an image. Then it also extract contours, sort the biggest (which should be the white line with correct cropping) and then enhance the ocntour and binarize. The algorithm finally computes the center of mass of the white blob left whith overlapping binary from the color extraction and the contour extraction.
- Then the cars steers the wheel through a simple proportional coefficient according to the x position of the bary center of the extracted blob which is supposed to be the line.
+ The algorithm has 4 steps:
+   - Filter white (and red) colors and output a binarized image as a white blob
+   - Extract contours, sort the biggest (which should be the white line with correct cropping) and then enhance the contour before binarizing it. 
+   - The algorithm finally extract the white blobs left when overlapping binary images from the color extraction and the contour extraction.
+   - It finally computes the center of mass of the blob which is supposed to be the line.
+   
+ Then the cars steers the wheel through a simple proportional coefficient according to the x position of the mass center of the extracted blob .
  
  ![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/IMG_20180715_233203.jpg)
  
