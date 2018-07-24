@@ -20,17 +20,20 @@ Information about the circuit can be found here : https://github.com/kolergy/Fab
 
 The Raspberry was using a ubuntu 16.04 image with ros-desktop-full install. It generates its own Wi-fi network on which a ground station can connect through a ROS-NETWORK for monitoring and debugging.
 
-The system is based on 3 nodes : 
-      - pwmDriver.py which translates twist_messages into PWM instruction on the PCA 9685 through I2C.      
-      - a raspicam_node from UbiquityRobotics https://github.com/UbiquityRobotics/raspicam_node      
-      - autnomous_node whichr egister to camera image and uses OpenCV instruction to extract the line 
+The system is based on 3 nodes in 3 packages : 
+
+
+- **pwmDriver.py** in **driver_mot** which translates twist_messages into PWM instruction on the PCA 9685 through I2C.      
+- **raspicam_node** from UbiquityRobotics https://github.com/UbiquityRobotics/raspicam_node      
+- **convert.py** in **autnomous_node**whichr egister to camera image and uses OpenCV instruction to extract the line 
       
+  ![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/Screenshot%20from%202018-07-24%2022-58-37.png)
       
       
  The algorithm process color (filtering white and red) and binarize an image. Then it also extract contours, sort the biggest (which should be the white line with correct cropping) and then enhance the ocntour and binarize. The algorithm finally computes the center of mass of the white blob left whith overlapping binary from the color extraction and the contour extraction.
  Then the cars steers the wheel through a simple proportional coefficient according to the x position of the bary center of the extracted blob which is supposed to be the line.
  
- ![Screenshot](https://raw.github.com/Luczia/autonomousRCcar/doc/IMG_20180715_233203.jpg)
+ ![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/IMG_20180715_233203.jpg)
  
  
  Please, note as well that the car being waaay to fast  (12m/s at full throttle) for araspbery Pi vision control, we designed a pecial gear to reduce 1/5 the speed and have a better accuracy in speed control (and be able to run a 0.5m/s). 3D printed files are available in the mechanics folder.
