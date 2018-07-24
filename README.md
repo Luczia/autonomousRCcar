@@ -1,6 +1,12 @@
 # autonomousRCcar
-All the code developped for the autonomousRCcar challenge of Continental, Renault, Airbus and Thalès at the FAB14 event
+This repos contains all the code developped for the autonomousRCcar challenge of Continental, Renault, Airbus and Thalès at the FAB14 event as part of a hackaton. Please note that the solution is far from being optimized and has been devlopped in 20h (3D printing parts included). A specific focus in the ContiTeam has been to create a very high level architecture, based on ROS which enables further devlopement and portability on other platform. 
 
+## The circuit :
+Information about the circuit can be found here : https://github.com/kolergy/Fab14-DroneEvent
+The track is also designed for a drone race, which was held above the cars heads.
+  ![Screenshot](https://github.com/kolergy/Fab14-DroneEvent/blob/master/Circuit_V0.4a.png)
+
+## The Hackathon kit :
 
 Every teams were provided with a kit including :
    - a 1/10 th brushed drift car kit https://www.banggood.com/Sinohobby-MINI-Q-Slash-TR-Q7BL-128-Carbon-Fiber-Racing-Brushless-RC-Car-p-1217972.html?rmmds=search
@@ -10,13 +16,17 @@ Every teams were provided with a kit including :
    
  to which we added : 
      -a 3A 12v-5v regulator and 12v-3.3V regulator
+     
+## The mechanics
 
+Everything stacked as fast as possible to get something running :
 
+![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/TheBeast.jpg)
+
+## Software Arhitecture
 
 Everything is developped for ROS environment, the system uses line tracking (color and contour) solutions to steer the wheels and adapt propulsion. The wheel are controlled py a PPM ServoMotor and the propulsion is driven by a RC car 8 A ESC. The car was designed to follow a 20m long track with a white line and borders.
 COnsidering the very low devlopment time (1 week or 10 spare hours), the algorithm focuses on line tracking.
-Information about the circuit can be found here : https://github.com/kolergy/Fab14-DroneEvent
-
 
 The Raspberry was using a ubuntu 16.04 image with ros-desktop-full install. It generates its own Wi-fi network on which a ground station can connect through a ROS-NETWORK for monitoring and debugging.
 
@@ -26,6 +36,7 @@ The system is based on 3 nodes in 3 packages :
 - **pwmDriver.py** in **driver_mot** which translates twist_messages into PWM instruction on the PCA 9685 through I2C.      
 - **raspicam_node** from UbiquityRobotics https://github.com/UbiquityRobotics/raspicam_node      
 - **convert.py** in **autnomous_node**whichr egister to camera image and uses OpenCV instruction to extract the line 
+      The node publish the different stage of image processing on ros_images for debugging and it generated a dynamic reconfigure server to allow online thresholding of the contour and color binarization.
       
   ![Screenshot](https://github.com/Luczia/autonomousRCcar/blob/master/doc/Screenshot%20from%202018-07-24%2022-58-37.png)
       
