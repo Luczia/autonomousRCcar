@@ -2,7 +2,8 @@
 This repos contains all the code developped for the autonomous RC car challenge of Continental, Renault, Airbus and Thalès at the FAB14 event as part of a hackaton. Please note that the solution is far from being optimized and has been devlopped in 20h (3D printing parts included). A specific focus in the ContiTeam has been to create a very high level architecture, based on ROS which enables further devlopements and portability on other platforms. 
 
 ## The circuit :
-Information about the circuit are [here](https://github.com/kolergy/Fab14-DroneEvent)
+Information about the circuit can be found[here](https://github.com/kolergy/Fab14-DroneEvent).
+
 The track is also designed for a drone race, which was held above the cars heads.
   ![Screenshot](https://github.com/kolergy/Fab14-DroneEvent/blob/master/Circuit_V0.4a.png)
 
@@ -50,6 +51,6 @@ The system is based on 3 nodes in 3 packages :
  Please, note as well that the car being waaay to fast  (12m/s at full throttle) for araspbery Pi vision control, we designed a pecial gear to reduce 1/5 the speed and have a better accuracy in speed control (and be able to run a 0.5m/s). 3D printed files are available in the mechanics folder.
  
  
- [Video of first trials](https://github.com/Luczia/autonomousRCcar/blob/master/doc/VID_20180717_143601.mp4) (with wrong coefficient):
+ [Video of first trials](https://github.com/Luczia/autonomousRCcar/blob/master/doc/VID_20180717_143601.mp4) (with wrong coefficient)
  
 
