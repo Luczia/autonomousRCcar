@@ -1,15 +1,15 @@
 # autonomousRCcar
-This repos contains all the code developped for the autonomousRCcar challenge of Continental, Renault, Airbus and Thalès at the FAB14 event as part of a hackaton. Please note that the solution is far from being optimized and has been devlopped in 20h (3D printing parts included). A specific focus in the ContiTeam has been to create a very high level architecture, based on ROS which enables further devlopement and portability on other platform. 
+This repos contains all the code developped for the autonomous RC car challenge of Continental, Renault, Airbus and Thalès at the FAB14 event as part of a hackaton. Please note that the solution is far from being optimized and has been devlopped in 20h (3D printing parts included). A specific focus in the ContiTeam has been to create a very high level architecture, based on ROS which enables further devlopements and portability on other platforms. 
 
 ## The circuit :
-Information about the circuit can be found here : https://github.com/kolergy/Fab14-DroneEvent
+Information about the circuit can be found [here :] (https://github.com/kolergy/Fab14-DroneEvent)
 The track is also designed for a drone race, which was held above the cars heads.
   ![Screenshot](https://github.com/kolergy/Fab14-DroneEvent/blob/master/Circuit_V0.4a.png)
 
 ## The Hackathon kit :
 
 Every teams were provided with a kit including :
-   - a 1/10 th brushed drift car kit https://www.banggood.com/Sinohobby-MINI-Q-Slash-TR-Q7BL-128-Carbon-Fiber-Racing-Brushless-RC-Car-p-1217972.html?rmmds=search
+   - a [1/10 brushed drift car kit] (https://www.banggood.com/Sinohobby-MINI-Q-Slash-TR-Q7BL-128-Carbon-Fiber-Racing-Brushless-RC-Car-p-1217972.html?rmmds=search)
    - a respberry Pi 3
    - a raspi camera v2
    - a PCA 9685 I2C/PWMconverter
