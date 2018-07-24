@@ -30,7 +30,7 @@ The system is based on 3 nodes :
  The algorithm process color (filtering white and red) and binarize an image. Then it also extract contours, sort the biggest (which should be the white line with correct cropping) and then enhance the ocntour and binarize. The algorithm finally computes the center of mass of the white blob left whith overlapping binary from the color extraction and the contour extraction.
  Then the cars steers the wheel through a simple proportional coefficient according to the x position of the bary center of the extracted blob which is supposed to be the line.
  
- ![alt text](https://raw.githubusercontent.com/Luczia/autonomousRCcar/doc/IMG_20180715_233203.jpg)
+ ![Screenshot](https://raw.github.com/Luczia/autonomousRCcar/doc/IMG_20180715_233203.jpg)
  
  
  Please, note as well that the car being waaay to fast  (12m/s at full throttle) for araspbery Pi vision control, we designed a pecial gear to reduce 1/5 the speed and have a better accuracy in speed control (and be able to run a 0.5m/s). 3D printed files are available in the mechanics folder.
